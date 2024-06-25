@@ -7,62 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="myFunctions.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".details-button").click(function() {
-                $(this).closest("tr").next(".property-details").toggle();
-            });
-
-            $("#proceed").click(function() {
-                $("#application-form").toggle();
-            });
-
-            $("#application-form").submit(function(event) {
-                event.preventDefault();
-                var isValid = validateForm();
-                if (isValid) {
-                    alert("Form submitted successfully!");
-                }
-            });
-
-            function validateForm() {
-                var fullName = $("#full-name").val();
-                var nationalId = $("#national-id").val();
-                var birthdate = $("#birthdate").val();
-                var mobileNumber = $("#mobile-number").val();
-                var email = $("#email").val();
-
-                var fullNameRegex = /^[\u0600-\u06FF\s]+$/; // Arabic characters and spaces
-                var nationalIdRegex = /^\d{11}$/;
-                var birthdateRegex = /^\d{2}-\d{2}-\d{4}$/;
-                var mobileNumberRegex = /^(09|08)\d{8}$/;
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!fullNameRegex.test(fullName)) {
-                    alert("الاسم الكامل يجب أن يكون باللغة العربية فقط.");
-                    return false;
-                }
-                if (!nationalIdRegex.test(nationalId)) {
-                    alert("الرقم الوطني يجب أن يتكون من 11 رقم.");
-                    return false;
-                }
-                if (!birthdateRegex.test(birthdate)) {
-                    alert("تاريخ الولادة يجب أن يكون بصيغة dd-mm-yyyy.");
-                    return false;
-                }
-                if (!mobileNumberRegex.test(mobileNumber)) {
-                    alert("رقم الموبايل يجب أن يبدأ بـ 09 أو 08 ويحتوي على 10 أرقام.");
-                    return false;
-                }
-                if (!emailRegex.test(email)) {
-                    alert("يرجى إدخال بريد إلكتروني صالح.");
-                    return false;
-                }
-
-                return true;
-            }
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -98,8 +42,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>الطابق الثالث، متوفر كراج، المنطقة: ركن الدين، بلكون مساحة 12م²، الملكية: طابو</p>
-                        <img src="images/property1_1.jpg" alt="Property Image 1">
-                        <img src="images/property1_2.jpg" alt="Property Image 2">
+                        <img src="images/property1_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property1_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -112,8 +56,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>لا توجد تفاصيل إضافية.</p>
-                        <img src="images/property2_1.jpg" alt="Property Image 1">
-                        <img src="images/property2_2.jpg" alt="Property Image 2">
+                        <img src="images/property2_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property2_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -126,8 +70,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>لا توجد تفاصيل إضافية.</p>
-                        <img src="images/property3_1.jpg" alt="Property Image 1">
-                        <img src="images/property3_2.jpg" alt="Property Image 2">
+                        <img src="images/property3_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property3_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <!-- Add more properties here -->
@@ -141,8 +85,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>الطابق الثاني، مصعد، المنطقة: شارع النيل</p>
-                        <img src="images/property4_1.jpg" alt="Property Image 1">
-                        <img src="images/property4_2.jpg" alt="Property Image 2">
+                        <img src="images/property4_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property4_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -155,8 +99,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>منطقة: الشاطئ الأزرق، مسبح خاص، مفروش بالكامل</p>
-                        <img src="images/property5_1.jpg" alt="Property Image 1">
-                        <img src="images/property5_2.jpg" alt="Property Image 2">
+                        <img src="images/property5_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property5_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -169,8 +113,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>موقع مركزي، قريب من الخدمات</p>
-                        <img src="images/property6_1.jpg" alt="Property Image 1">
-                        <img src="images/property6_2.jpg" alt="Property Image 2">
+                        <img src="images/property6_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property6_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -183,8 +127,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>منطقة: باب توما، طابق أرضي، موقع مميز</p>
-                        <img src="images/property7_1.jpg" alt="Property Image 1">
-                        <img src="images/property7_2.jpg" alt="Property Image 2">
+                        <img src="images/property7_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property7_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -197,8 +141,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>قريب من المدارس والأسواق</p>
-                        <img src="images/property8_1.jpg" alt="Property Image 1">
-                        <img src="images/property8_2.jpg" alt="Property Image 2">
+                        <img src="images/property8_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property8_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -211,8 +155,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>منطقة: المزيريب، مسبح وحديقة كبيرة</p>
-                        <img src="images/property9_1.jpg" alt="Property Image 1">
-                        <img src="images/property9_2.jpg" alt="Property Image 2">
+                        <img src="images/property9_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property9_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -225,8 +169,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>الطابق الخامس، منطقة: كفرسوسة، بدون أثاث</p>
-                        <img src="images/property10_1.jpg" alt="Property Image 1">
-                        <img src="images/property10_2.jpg" alt="Property Image 2">
+                        <img src="images/property10_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property10_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -239,8 +183,8 @@
                 <tr class="property-details">
                     <td colspan="5">
                         <p>الطابق الرابع، مصعد، إطلالة على البحر</p>
-                        <img src="images/property11_1.jpg" alt="Property Image 1">
-                        <img src="images/property11_2.jpg" alt="Property Image 2">
+                        <img src="images/property11_1.jpg" width="100" height="80" alt="Property Image 1">
+                        <img src="images/property11_2.jpg" width="100" height="80" alt="Property Image 2">
                     </td>
                 </tr>
                 <tr>
@@ -249,13 +193,6 @@
                     <td>دمشق</td>
                     <td>شقة مفروشة غرفتين وصالة مساحة 120م²</td>
                     <td>700000 ل.س</td>
-                </tr>
-                <tr class="property-details">
-                    <td colspan="5">
-                        <p>الطابق الرابع، مصعد، مفروشة بالكامل</p>
-                        <img src="images/property12_1.jpg" alt="Property Image 1">
-                        <img src="images/property12_2.jpg" alt="Property Image 2">
-                    </td>
                 </tr>
             </tbody>
         </table>
@@ -270,7 +207,7 @@
                 <input type="text" id="national-id" name="national-id" required>
                 <br>
                 <label for="birthdate">تاريخ الولادة:</label>
-                <input type="text" id="birthdate" name="birthdate" required>
+                <input type="date" id="birthdate" name="birthdate" required>
                 <br>
                 <label for="mobile-number">رقم الموبايل:</label>
                 <input type="text" id="mobile-number" name="mobile-number" required>
